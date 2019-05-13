@@ -19,7 +19,13 @@
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
       </tr>
+      <div class="article-meta-details">
+          <small>Created by: <%= article.user.username if article.user%>,<%= time_ago_in_words(article.created_at) %> ago,last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+        </div>
+
     <% end %>
   </tbody>
 </table>
